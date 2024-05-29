@@ -8,3 +8,4 @@
 • Update projects & resume
 • Re-Org Images into Folders per Page
 • Add Site ICON. Canva logo creation?
+• Delete Screen Reader Only (Teach IT) Content. Archive outside of repo?
