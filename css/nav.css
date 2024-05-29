@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,900&display=swap');
+
+/* 
+	Navigation by Yash Vadhadiya
+	Available at: https://codepen.io/yash-vadhadiya/pen/BaKYwPp
+*/
+
+/* General styles */
+body {
+	margin: 0;
+    padding: 0;
+}
+
+nav {
+	top: 0;
+}
+
+/* Open button */
+.trigger {
+	position: fixed;
+	top: 1em;
+	right: 2em;
+	background: green;
+	outline: 0;
+	padding: 8px 15px;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+	font-size: 2em;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+	border: 2px solid black;
+	transition: 0.15s ease-in-out;
+	cursor: pointer;
+	z-index: 9998;
+}
+.trigger:hover {
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Nav position and opening class */
+.full-screen-nav {
+	margin: 0;
+    padding: 0;
+	top: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+	transition: 0.2s ease-in-out;
+	display: none;
+	z-index: 9999;
+}
+.open-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Backgroup position and animation */
+.backdrop {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.92);
+	cursor: pointer;
+	animation: fadeIn 0.2s ease-in-out forwards;
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* List item styling & animation */
+.nav-ul {
+	z-index: 9999;
+	position: relative;
+}
+.nav-ul li {
+	background-color: transparent;
+	list-style: none;
+	text-align: center;
+	margin-bottom: 30px;
+	animation: 0.25s ease-in-out animateList forwards;
+}
+.nav-ul li:last-child {
+	margin-bottom: 0;
+}
+@keyframes animateList {
+	from {
+		margin-top: -60px;
+		opacity: 0;
+	}
+	to {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+/* Item links styles and hover effect*/
+.nav-ul li a {
+	text-decoration: none;
+	color: #ccc;
+	font-size: 3em;
+	font-weight: 900;
+	text-transform: uppercase;
+	transition: 0.15s ease-in-out;
+}
+.nav-ul li a:hover,
+.nav-ul li a i {
+	color: green;
+}
+
+@media (min-width: 0px) {
+	.trigger {
+		padding: 3px 10px;
+		font-size: 1em;
+		top: 1em;
+		right: 1em;
+	}
+}
+
+@media (min-width: 576px) {
+	.trigger {
+		padding: 5px 12px;
+		font-size: 1.5em;
+		top: 1em;
+		right: 1.5em;
+	}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	.trigger {
+		padding: 6px 15px;
+		font-size: 1.7em;
+		top: 1em;
+		right: 1.5em;
+	}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	.trigger {
+		padding: 8px 15px;
+		font-size: 2em;
+		top: 1em;
+		right: 1.5em;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.trigger {
+		padding: auto 15px;
+		font-size: 2em;
+		top: 1em;
+		right: 2em;
+	}
+}

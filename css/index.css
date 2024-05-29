@@ -1,0 +1,305 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+:root {
+    --dark-green: #8B8C5D;
+    --light-green: #848C46;
+    --ocean-blue: #537FA6;
+    --dark-blue: #254159;
+    --light-blue: #66B1F2;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p,
+a,
+li {
+    font-family: 'Lato', sans-serif;
+}
+
+
+/* 
+  HEADER
+*/
+header {
+    /* Header Format*/
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
+
+    /* Header Flex */
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    /* Header Style */
+    background: url("../images/mountain-bg.JPG");
+    background-position: 10% 50%;
+    background-size: cover;
+    border-bottom: 10px solid black;
+}
+
+.header-box {
+    /* Header Box Formatting */
+    padding: 0em 0.3em;
+    font-size: 45px;
+
+    /* Header Box Styling */
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 1%;
+    box-shadow: 10px 10px 0px black;
+    color: black;
+}
+
+/* Home Page Sections */
+.intro-block {
+    /* Section Flex */
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+
+    /* Section Formatting */
+    margin: 5em auto;
+    width: 800px;
+}
+
+.intro-block a {
+    /* Intro Link Formatting */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 50px;
+    font-size: 20px;
+    padding: 0.5em;
+
+    /* Intro Link Styling */
+    border-radius: 16px;
+    color: black;
+    background-color: lightgray;
+    border: 1px solid black;
+    box-shadow: none;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.intro-block a:hover {
+    text-decoration: underline;
+    box-shadow: 5px 5px 0px black;
+    transition: all 0.3s ease-in-out;
+}
+
+.intro-text {
+    /* Intro Text Formatting */
+    width: 50%;
+    position: relative;
+    text-align: left;
+    padding: 0 2em 2em;
+
+    /* Intro Text Styling */
+    background-color: white;
+    border: 2px solid black;
+}
+
+.intro-text h3 {
+    font-size: 28px;
+}
+
+.intro-text p {
+    font-size: 28px;
+}
+
+.intro-block figure {
+    width: 400px;
+    height: 600px;
+}
+
+/*
+    INTRO IMAGES
+*/
+.AbMe,
+.PrOv {
+    overflow: hidden;
+    background-image: url("../images/self-forest.jpg");
+    background-size: 150%;
+    background-position: 30% 70%;
+}
+
+.AbMe {
+    box-shadow: -15px 15px 0px var(--light-blue);
+    background-image: url("../images/self-forest.jpg");
+}
+
+.PrOv {
+    box-shadow: 15px 15px 0px var(--light-green);
+    background-image: url("../images/self-falcon.jpg");
+}
+
+
+/*
+    INDEX MEDIA QUERIES
+*/
+/* Minimum Sized Devices */
+@media (min-width: 0px) {
+    .header-box {
+        font-size: 24px;
+    }
+    
+    .intro-block a {
+        font-size: 8px;
+        height: 20px;
+    }
+    .intro-text h3 {
+        font-size: 16px;
+    }
+    .intro-text p {
+        font-size: 10px;
+    }
+
+    .intro-block {
+        width: 400px;
+    }
+    .intro-text {
+        width: 60%;
+    }
+    .intro-block figure {
+        width: 300px;
+        height: 250px;
+    }
+}
+/* Smaller Devices */
+@media (min-width: 576px) {
+    .header-box {
+        font-size: 30px;
+    }
+    
+    .intro-block a {
+        font-size: 12px;
+        height: 25px;
+    }
+    .intro-text h3 {
+        font-size: 18px;
+    }
+    .intro-text p {
+        font-size: 16px;
+    }
+
+    .intro-block {
+        width: 600px;
+    }
+    .intro-text {
+        width: 50%;
+    }
+    .intro-block figure {
+        width: 200px;
+        height: 250px;
+    }
+
+}
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    .header-box {
+        font-size: 35px;
+    }
+    .intro-block a {
+        font-size: 18px;
+        height: 40px;
+    }
+    .intro-text h3 {
+        font-size: 26px;
+    }
+    .intro-text p {
+        font-size: 24px;
+        padding: 16px;
+    }
+
+    .intro-block {
+        width: 800px;
+    }
+    .intro-text {
+        width: 50%;
+    }
+    .intro-block figure {
+        width: 400px;
+        height: 500px;
+    }
+
+  }
+  
+  /* Medium devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+    .header-box {
+        font-size: 45px;
+    }
+    .intro-block a {
+        font-size: 20px;
+        height: 45px;
+    }
+    .intro-text h3 {
+        font-size: 28px;
+    }
+    .intro-text p {
+        font-size: 24px;
+    }
+
+    .intro-block {
+        width: 800px;
+    }
+    .intro-text {
+        width: 50%;
+    }
+    .intro-block figure {
+        width: 400px;
+        height: 550px;
+    }
+
+  
+  }
+  
+  /* Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) {
+    .header-box {
+        font-size: 45px;
+    }
+    .intro-block a {
+        font-size: 20px;
+    }
+    .intro-text h3 {
+        font-size: 28px;
+    }
+    .intro-text p {
+        font-size: 26px;
+    }
+  }

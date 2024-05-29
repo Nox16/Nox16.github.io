@@ -1,0 +1,53 @@
+/* natural box model */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* no break */
+.nobr {
+  white-space: nowrap;
+}
+
+:root {
+  --dark-green: #8B8C5D;
+  --light-green: #848C46;
+  --ocean-blue: #537FA6;
+  --dark-blue: #254159;
+  --light-blue: #66B1F2;
+}
+
+/* 
+  TYPOGRAPHY
+*/
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Playfair Display', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p,
+a,
+li {
+  font-family: 'Lato', sans-serif;
+}

@@ -1,0 +1,435 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+:root {
+    --dark-green: #8B8C5D;
+    --light-green: #848C46;
+    --ocean-blue: #537FA6;
+    --dark-blue: #254159;
+    --light-blue: #66B1F2;
+}
+
+/*
+    PAGE TYPOGRAPHY
+*/
+h2 {
+    font-size: 45px;
+    border-bottom: 5px solid orange;
+}
+
+p {
+    font-size: 20px;
+}
+
+/*
+    HEADER
+*/
+header {
+    /* Header Formatting */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    margin: 0em auto 2em;
+
+    /* Header Styling */
+    background-color: orange;
+    border-bottom: 10px solid black;
+}
+
+.oddjobs-header {
+    /* Header Formatting */
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+
+    /* Header Styling */
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0 black;
+    color: black;
+}
+
+/* 
+    ODD JOBS BUTTONS
+*/
+.oddjob-button {
+    color: black;
+    text-decoration: none;
+    background-color: lightgray;
+    padding: 0.5em;
+    border: 2px solid black;
+    border-radius: 16px;
+}
+
+.oddjob-button:hover {
+    background-color: orange;
+    color: white;
+    text-decoration: underline;
+}
+
+/* 
+    ABSTRACT
+*/
+.abstract {
+    margin: 2em auto 4em;
+    width: 90%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+/* Abstract Text */
+.abstract-text {
+    padding: 0.5em;
+    width: 45%;
+    border-radius: 3%;
+}
+
+.abstract-text p {
+    font-size: 20px;
+    border-left: 2px solid black;
+    padding-left: 0.5em;
+}
+
+/* Abstract Images */
+.abstract-img {
+    background: url("../images/ojtitle-img.jpg") no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 45%;
+    border: 1px solid black;
+    box-shadow: 10px 10px 0 orange;
+}
+
+/* 
+    POSTER
+*/
+.poster {
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+/* Poster Text */
+.poster-text {
+    width: 45%;
+}
+
+.poster-text p {
+    border-left: 2px solid black;
+    padding-left: 0.5em;
+    font-size: 20px;
+}
+
+/* Poster Image */
+.poster-img {
+    background: url("../images/ojposter-img.jpg") no-repeat;
+    background-size: contain;
+    width: 45%;
+    height: 950px;
+    box-shadow: -15px 15px 0 orange;
+}
+
+/* 
+    VIDEO
+*/
+.video {
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+/* Video Text */
+.video-text {
+    width: 45%;
+}
+
+.video-text p {
+    border-left: 2px solid black;
+    padding-left: 0.5em;
+}
+
+/* In-Page Youtube Video */
+.video-video {
+    width: 45%;
+    border: 2px solid black;
+    box-shadow: 15px 15px 0 orange;
+}
+
+.video-video iframe {
+    height: 100%;
+    width: 100%;
+}
+
+/* 
+    MEDIA QUERIES
+*/
+@media (min-width: 0px) {
+    .trigger {
+        background-color: white;
+        color: black;
+    }
+    
+    .nav-ul li a:hover,
+    .nav-ul li a i {
+	    color: orange;
+    }
+    
+    .oddjobs-header {
+        font-size: 21px;
+    }
+    .abstract {
+        flex-flow: column nowrap;
+    }
+    .abstract-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .abstract-img {
+        margin: 1em auto;
+        background-size: 100%;
+        height: 200px;
+        width: 100%;
+    }
+
+    .poster {
+        flex-flow: column-reverse nowrap;
+    }
+    .poster-text {
+        margin: 0 auto;
+        width: 80%
+    }
+    .poster-img {
+        margin: 0 auto;
+        width: 90%;
+        height: 655px;
+    }
+
+    .video {
+        flex-flow: column nowrap;
+    }
+    .video-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .video-video {
+        margin: 1em auto;
+        width: 80%;
+        height: 400px;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .oddjobs-header {
+        font-size: 26px;
+    }
+    .abstract {
+        flex-flow: column nowrap;
+    }
+    .abstract-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .abstract-img {
+        margin: 1em auto;
+        height: 300px;
+        width: 100%;
+    }
+
+    .poster {
+        flex-flow: column-reverse nowrap;
+    }
+    .poster-text {
+        margin: 0 auto;
+        width: 80%
+    }
+    .poster-img {
+        margin: 0 auto;
+        width: 90%;
+        height: 800px;
+    }
+
+    .video {
+        flex-flow: column nowrap;
+    }
+    .video-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .video-video {
+        margin: 1em auto;
+        width: 80%;
+        height: 400px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .oddjobs-header {
+        font-size: 30px;
+    }
+    .abstract {
+        flex-flow: column nowrap;
+    }
+    .abstract-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .abstract-img {
+        margin: 1em auto;
+        height: 400px;
+        width: 100%;
+    }
+
+    .poster {
+        flex-flow: column-reverse nowrap;
+    }
+    .poster-text {
+        margin: 0 auto;
+        width: 80%
+    }
+    .poster-img {
+        margin: 0 auto;
+        width: 90%;
+        height: 1000px;
+    }
+
+    .video {
+        flex-flow: column nowrap;
+    }
+    .video-text {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .video-video {
+        margin: 1em auto;
+        width: 80%;
+        height: 600px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .oddjobs-header {
+        font-size: 35px;
+    }
+    .abstract {
+        flex-flow: row nowrap;
+    }
+    .abstract-text {
+        margin: initial;
+        width: 45%;
+    }
+    .abstract-img {
+        height: 250px;
+        width: 45%;
+    }
+
+    .poster {
+        flex-flow: row nowrap;
+    }
+    .poster-text {
+        margin: inherit;
+        width: 45%
+    }
+    .poster-img {
+        background-size: cover;
+        margin: inherit;
+        width: 45%;
+        height: 800px;
+    }
+
+    .video {
+        flex-flow: row nowrap;
+    }
+    .video-text {
+        margin: 0 auto;
+        width: 40%;
+    }
+    .video-video {
+        margin: 1em auto;
+        width: 50%;
+        height: 400px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .oddjobs-header {
+        font-size: 35px;
+    }
+    .abstract {
+        flex-flow: row nowrap;
+    }
+    .abstract-text {
+        margin: none;
+        width: 45%;
+    }
+    .abstract-img {
+        height: 275px;
+        width: 45%;
+    }
+
+    .poster {
+        flex-flow: row nowrap;
+    }
+    .poster-text {
+        margin: inherit;
+        width: 45%
+    }
+    .poster-img {
+        background-size: cover;
+        margin: inherit;
+        width: 45%;
+        height: 950px;
+    }
+
+    .video {
+        flex-flow: row nowrap;
+    }
+    .video-text {
+        margin: 0 auto;
+        width: 45%;
+    }
+    .video-video {
+        margin: 1em auto;
+        width: 50%;
+        height: 400px;
+    }
+}

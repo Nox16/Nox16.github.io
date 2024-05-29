@@ -1,0 +1,44 @@
+/* 
+  FOOTER
+*/
+footer {
+    height: 120px;
+    background-color: steelblue;
+  }
+  
+  footer p,
+  footer ul {
+    font-size: 25px;
+    color: white;
+    text-align: center;
+  }
+  
+  footer p {
+    font-size: 18px;
+    opacity: 0.5;
+    text-align: center;
+  }
+  
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding-top: 1em;
+    padding-right: 1em;
+  }
+  
+  footer li {
+    padding: 0 0.75em;
+  }
+  
+  footer a:visited,
+  footer a {
+    color: lightblue;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: navy;
+    opacity: 0.5;
+  }

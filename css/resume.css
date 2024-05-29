@@ -1,0 +1,310 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+:root {
+    --dark-green: #8B8C5D;
+    --light-green: #848C46;
+    --ocean-blue: #537FA6;
+    --dark-blue: #254159;
+    --light-blue: #66B1F2;
+}
+
+/* 
+  HEADER
+*/
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    margin: 0em auto 4em;
+    background-color: var(--light-green);
+    border-bottom: 10px solid black;
+}
+
+.resume-header {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0 black;
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+}
+
+/* 
+    SECTION TYPOGRAPHY
+*/
+h2,
+h3,
+p,
+li {
+    line-height: 1.1em;
+}
+
+
+/* Section Headers */
+h2 {
+    margin: 0 auto 0.5em;
+    font-size: 48px;
+    /* white-space: nowrap; */
+    color: black;
+    text-align: center;
+    width: 80%;
+    border-bottom: 2px solid black;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+p,
+h4 {
+    font-size: 25px;
+}
+
+/* 
+    RESUME DOWNLOAD
+*/
+.download {
+    margin: 0 auto 2em;
+    width: 60%;
+    border: 1px solid black;
+    box-shadow: 5px 5px 0 var(--dark-green);
+    text-align: center;
+}
+
+.download h3 {
+    font-size: 35px;
+    margin: 1em;
+}
+
+.download a,
+.download a:visited {
+    color: var(--dark-green);
+    text-decoration: none;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+}
+
+.download a:hover {
+    color: var(--light-blue);
+}
+
+/* 
+    EDUCATION AND TECHNICAL SKILLS
+*/
+.flex-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.education,
+.techskills {
+    margin: 0 auto 2em;
+    padding: 1em;
+    text-align: left;
+}
+
+.section-chunk {
+    margin: 1em auto;
+    padding: 0em;
+    padding-left: 0.5em;
+    border-left: 3px solid var(--light-blue);
+}
+
+.section-chunk h4,
+.section-chunk p {
+    margin: 0;
+}
+
+.section-chunk ul, .section-chunk li {
+    font-size: 22px;
+    font-style: italic;
+    margin: 0.5em auto;
+    list-style: disc;
+}
+
+/* 
+    WORK EXPERIENCE
+*/
+.workexperience {
+    margin: 0 auto 4em;
+    width: 70%;
+}
+
+.job {
+    margin: 2em auto 0;
+    padding-left: 1em;
+    border-left: 3px solid var(--light-blue);
+}
+
+.datetime {
+    color: var(--light-green);
+    font-style: italic;
+    margin: 0em;
+}
+
+/* Job Title */
+.job h4 {
+    margin: 0;
+    padding: 0.5em 0 0;
+    text-decoration: underline;
+    font-weight: normal;
+}
+
+.workexperience ul {
+    margin: 0;
+    padding: 0;
+}
+
+.workexperience li {
+    font-size: 20px;
+    padding: 0.5em 0em 0;
+    list-style: none;
+}
+
+
+@media (min-width: 0px) {
+    .resume-header {
+        font-size: 21px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    
+    .download h3 {
+        font-size: 20px;
+    }
+
+    .flex-row {
+        flex-flow: column nowrap;
+    }
+
+    .education, .techskills {
+        width: 80%;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .resume-header {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 40px;
+        white-space: nowrap;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    
+    .download h3 {
+        font-size: 25px;
+    }
+
+    .flex-row {
+        flex-flow: row nowrap;
+    }
+
+    .education, .techskills {
+        width: 40%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .resume-header {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 43px;
+        white-space: nowrap;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    
+    .download h3 {
+        font-size: 30px;
+    }
+
+    .flex-row {
+        flex-flow: row nowrap;
+    }
+
+    .education, .techskills {
+        width: 40%;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .resume-header {
+        font-size: 35px;
+    }
+
+    h2 {
+        font-size: 45px;
+        white-space: nowrap;
+    }
+    h3 {
+        font-size: 30px;
+    }
+    
+    .download h3 {
+        font-size: 35px;
+    }
+
+    .flex-row {
+        flex-flow: row nowrap;
+    }
+
+    .education, .techskills {
+        width: 40%;
+    }
+}

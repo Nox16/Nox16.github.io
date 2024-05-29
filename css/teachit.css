@@ -1,0 +1,251 @@
+/* natural box model */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* UTILITIES */
+
+/* hides an element on screen, but not from screen readers */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* no break */
+.nobr {
+    white-space: nowrap;
+}
+
+:root {
+    --dark-green: #8B8C5D;
+    --light-green: #848C46;
+    --ocean-blue: #537FA6;
+    --dark-blue: #254159;
+    --light-blue: #66B1F2;
+}
+
+
+/* 
+    HEADER
+*/
+header {
+    /* Header Formatting */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 100%;
+    margin: 0em auto 4em;
+
+    /* Header Styling */
+    background-color: green;
+    border-bottom: 10px solid black;
+}
+
+.project-header {
+    /* Header Formatting */
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    font-size: 35px;
+
+    /* Header Styling */
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 16px;
+    box-shadow: 10px 10px 0 black;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+}
+
+/* 
+    INTRO ROW
+*/
+
+.intro-row {
+    margin: 2em auto;
+    width: 80%;
+    display: flex;
+    justify-content:space-evenly;
+    flex-flow: row nowrap;
+}
+
+/* 
+    INTRO
+*/
+.intro-card {
+    /* Intro Card Formatting */
+    position: relative;
+    height: auto;
+    width: 45%;
+
+    /* Intro Card Flex */
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+
+    /* Intro Card Styling */
+    border: 1px solid black;
+    box-shadow: 5px 5px 0px green;
+}
+
+.intro-card h1 {
+    text-align: center;
+    text-decoration: underline;
+    padding: 0.5em;
+    line-height: 0;
+}
+
+.intro-card p {
+    margin: 0 auto;
+    padding: 0em 1em 1em;
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
+/* 
+    SEMESTER LESSON LINKS
+*/
+.lesson-links {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.lesson-link-box {
+    /* Lesson Header Formatting */
+    margin: 2em auto 0 auto ;
+    width: 45%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+
+    /* Lesson Header Styling */
+    border: 1px solid black;
+    box-shadow: 5px 5px 0px black;
+}
+
+.lesson-link-box h1 {
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+    padding: 0;
+}
+
+/*
+    CASE STUDIES / LESSONS
+*/
+
+/* Flex Rows */
+.card-row {
+    margin: 2em auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+}
+
+/* Individual Project Cards */
+.project-card {
+    position: relative;
+    height: auto;
+    width: 35%;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 2%;
+}
+
+.project-card h2 {
+    padding-top: 0.5em;
+    text-align: center;
+    color: black;
+    font-size: 33px;
+}
+
+/* Project Card Shadows */
+.lg-bs {
+    box-shadow: 8px 8px 0 var(--light-green);
+}
+
+.lb-bs {
+    box-shadow: 8px 8px 0 var(--light-blue);
+}
+
+/* Project Text */
+.card-text {
+    color: black;
+    font-size: 20px;
+    padding: 1em;
+    padding-bottom: 3em;
+}
+
+/* 
+    PROJECT CARD IMAGES
+*/
+.PR-img {
+    height: 200px;
+    width: 75%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+/* 
+    PROJECT BUTTONS
+*/
+.project-button {
+    /* Button Formatting */
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 20px;
+    padding: 0.5em;
+
+    /* Button Styling */
+    border-radius: 16px;
+    color: black;
+    background-color: lightgray;
+    border: 1px solid black;
+    box-shadow: none;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-button:hover {
+    text-decoration: underline;
+    box-shadow: 5px 5px 0px black;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 
+    GROW -- HOVER.CSS
+*/
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+}
