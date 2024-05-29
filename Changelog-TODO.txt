@@ -1,8 +1,10 @@
 -- Update History --
 02/02/24 : Started Spring 2024 Teach IT Portfolio
 04/04/24 : Completed Spring 2024 Teach IT Portfolio
-05/22/23 : Set Teach IT Sections to Screen Reader Only | Removed Phone Number from Footer
+05/22/24 : Set Teach IT Sections to Screen Reader Only | Removed Phone Number from Footer
+05/29/24 : Moved Site to GitHub Pages – Updated Files to May 2024 Edits
 
 -- To Do | Possible Changes --
 • Update projects & resume
 • Re-Org Images into Folders per Page
+• Add Site ICON. Canva logo creation?
