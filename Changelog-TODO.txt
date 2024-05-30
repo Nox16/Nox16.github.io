@@ -9,3 +9,4 @@
 • Update projects & resume for FA23 & SP24 Work.
 • Re-Org Images into Folders per Page
 • Add Site ICON. Canva logo creation?
+• Add HTML Folder & Change Index.html to redirect to 'home/html'
