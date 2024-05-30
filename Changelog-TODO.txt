@@ -3,9 +3,9 @@
 04/04/24 : Completed Spring 2024 Teach IT Portfolio
 05/22/24 : Set Teach IT Sections to Screen Reader Only | Removed Phone Number from Footer
 05/29/24 : Moved Site to GitHub Pages – Updated Files to May 2024 Edits
+05/30/24 : Removed all Teach IT Related Files, Copied to Private Directory
 
 -- To Do | Possible Changes --
-• Update projects & resume
+• Update projects & resume for FA23 & SP24 Work.
 • Re-Org Images into Folders per Page
 • Add Site ICON. Canva logo creation?
-• Delete Screen Reader Only (Teach IT) Content. Archive outside of repo?
