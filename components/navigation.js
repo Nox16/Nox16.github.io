@@ -21,9 +21,6 @@ class NavComp extends HTMLElement {
                 <li>
                     <a href="../aboutme.html"><i class="fas fa-user-alt"></i> About Me</a>
                 </li>
-                <li class="sr-only"> <!-- SCREEN READER ONLY -->
-                    <a href="../teachit.html"><i class="fa-solid fa-school"></i> Teach IT</a>
-                </li>
             </ul>
         </nav>
 
