@@ -4,9 +4,11 @@
 05/22/24 : Set Teach IT Sections to Screen Reader Only | Removed Phone Number from Footer
 05/29/24 : Moved Site to GitHub Pages – Updated Files to May 2024 Edits
 05/30/24 : Removed all Teach IT Related Files, Copied to Private Directory
+06/24/24 : Upddated resume download file & resume HTMl to represent June 2024 information
 
 -- To Do | Possible Changes --
 • Update projects & resume for FA23 & SP24 Work.
 • Re-Org Images into Folders per Page
 • Add Site ICON. Canva logo creation?
 • Add HTML Folder & Change Index.html to redirect to 'home/html'
+• 'About Me' Media to Squares & Titles with no descriptions
