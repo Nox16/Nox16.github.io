@@ -162,6 +162,12 @@ header {
     background-size: 80%;
 }
 
+.spotify-img {
+    background: url("../images/spotify.png") no-repeat;
+    background-position: center;
+    background-size: 80%;
+}
+
 /* 
     PROJECT BUTTONS
 */
