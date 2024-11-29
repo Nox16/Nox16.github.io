@@ -1,89 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-    I360 Web Design Template
--->
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home - Matthew Clark</title>
-    <!-- resets browser defaults -->
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <!-- custom styles -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/footer.css">
-    <!-- navigation plugin css -->
-    <link rel="stylesheet" type="text/css" href="css/nav.css">
-    <!-- custom components -->
-    <script src="components/footer.js" type="text/javascript" defer></script>
-    <!-- Navigation by Yash Vadhadia, Available at: https://codepen.io/yash-vadhadiya/pen/BaKYwPp -->
-    <script src="components/navigation.js" type="text/javascript" defer></script>
-    <!-- font awesome icons -->
-    <script src="https://kit.fontawesome.com/1564bbb06c.js" crossorigin="anonymous"></script>
+    <title>Dark Pattern Ontology</title>
 </head>
-<body id="index">
+<link rel="stylesheet" href="ontology.css">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="buttonStyles.css">
 
-    <!-- NAVIGATION -->
-    <nav-component></nav-component>
-    
-    <!-- HEADER -->
-    <header>
-        <div class="header-box">
-            <h2>Hey! I'm Matthew.</h2>
+<body>
+    <div class="button-container">
+        <button id="expand-all">Expand All</button>
+        <button id="collapse-all">Collapse All</button>
+    </div>
+
+    <div id="container"></div>
+
+    <!-- Modal Container  -->
+    <div class="modal-container" id="modal-container">
+
+        <!-- Modal -->
+        <div class="modal" id="modal">
+            <div id="modal-title">
+                Temp. Title
+            </div>
+
+            <button type="button" onclick="closePopup()" id="modal-close-button">
+                X
+            </button>
+
+            <hr class="modal-divider">
+            </hr>
+
+            <div id="modal-body-text">
+                Temp. Definition
+            </div>
+
+            <div id="modal-sources">
+                <div id="modal-sources-key">
+                    <div id="sources-key-regulatory">Regulatory Report</div>
+                    <div id="sources-key-academic">Academic Article</div>
+                </div>
+                <div id="modal-direct">
+                    <div id="tag-title-direct" class="tag-title">
+                        Direct:
+                    </div>
+                    <div id="direct-tags">
+                        <div class="pill-tag direct-pill">TEMP</div>
+                        <div class="pill-tag direct-pill">TEMP</div>
+                        <div class="pill-tag direct-pill">TEMP</div>
+                    </div>
+                </div>
+
+                <div id="modal-inferred">
+                    <div id="tag-title-inferred" class="tag-title">
+                        Inferred:
+                    </div>
+                    <div id="inferred-tags">
+                        <div class="pill-tag inferred-pill">TEMP</div>
+                        <div class="pill-tag inferred-pill">TEMP</div>
+                        <div class="pill-tag inferred-pill">TEMP</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-case-studies">
+
+                <header id="case-studies-section-title">
+                    Case Studies & Live Examples
+                </header>
+
+                <hr class="modal-divider">
+                </hr>
+
+                <div id="case-study">
+                    <div id="case-study-image"></div>
+                    <div id="case-study-content">
+                        <header id="case-study-title">
+                            Case Study (Example) Title
+                        </header>
+
+                        <hr class="case-study-divider">
+                        </hr>
+
+                        <div id="case-study-origin">
+                            Academic
+                        </div>
+
+                        <div id="case-study-description">
+                            Case Study Description
+                            <br>
+                            Lorem ipsum odor amet, consectetuer adipiscing elit. Urna tempus facilisi augue potenti
+                            magnis donec nulla justo ornare. Augue sem ante nisi taciti penatibus hac hendrerit
+                            fermentum congue. Justo urna cursus tortor; inceptos phasellus pellentesque. Gravida maximus
+                            nec ad tempor dapibus. Dignissim mauris venenatis consequat morbi convallis ultrices
+                            fermentum. Vivamus maecenas a consequat dapibus; quis aptent dignissim.
+                        </div>
+
+                        <div id="case-study-link">
+                            Link
+                        </div>
+                    </div>
+                </div>
+
+                <div id="case-study">
+                    <div id="case-study-image"></div>
+                    <div id="case-study-content">
+                        <header id="case-study-title">
+                            Case Study (Example) Title
+                        </header>
+
+                        <hr class="case-study-divider">
+                        </hr>
+
+                        <div id="case-study-origin">
+                            Regulatory Law
+                        </div>
+
+                        <div id="case-study-description">
+                            Case Study Description
+                            <br>
+                            Lorem ipsum odor amet, consectetuer adipiscing elit. Urna tempus facilisi augue potenti
+                            magnis donec nulla justo ornare. Augue sem ante nisi taciti penatibus hac hendrerit
+                            fermentum congue. Justo urna cursus tortor; inceptos phasellus pellentesque. Gravida maximus
+                            nec ad tempor dapibus. Dignissim mauris venenatis consequat morbi convallis ultrices
+                            fermentum. Vivamus maecenas a consequat dapibus; quis aptent dignissim.
+                        </div>
+
+                        <div id="case-study-link">
+                            Link
+                        </div>
+                    </div>
+                </div>
+
+                <div id="case-study">
+                    <div id="case-study-image"></div>
+                    <div id="case-study-content">
+                        <header id="case-study-title">
+                            Case Study (Example) Title
+                        </header>
+
+                        <hr class="case-study-divider">
+                        </hr>
+
+                        <div id="case-study-origin">
+                            Case Law
+                        </div>
+
+                        <div id="case-study-description">
+                            Case Study Description
+                            <br>
+                            Lorem ipsum odor amet, consectetuer adipiscing elit. Urna tempus facilisi augue potenti
+                            magnis donec nulla justo ornare. Augue sem ante nisi taciti penatibus hac hendrerit
+                            fermentum congue. Justo urna cursus tortor; inceptos phasellus pellentesque. Gravida maximus
+                            nec ad tempor dapibus. Dignissim mauris venenatis consequat morbi convallis ultrices
+                            fermentum. Vivamus maecenas a consequat dapibus; quis aptent dignissim.
+                        </div>
+
+                        <div id="case-study-link">
+                            Link
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-    </header>
-
-    <!-- Introduction Information / Primary Information -->
-    <main>
-
-        <!-- ABOUT ME -->
-        <section class="intro-block">
-
-            <!-- ABOUT ME IMAGE -->
-            <figure class="AbMe"></figure>
-
-            <!-- ABOUT ME TEXT -->
-            <div class="intro-text">
-                <h3>A Little About Me</h3>
-                <p>
-                    I am currently a graduate student at Indiana University, studying Human-Computer Interaction & Design (HCI/D).
-                </p>
-                <p>
-                    I received my Bachelors of Science studying Informatics with minors in Human-Centered Computing, Computer Science, and Web Design and Development.
-                </p>
-                <br>
-                <a href="aboutme.html">Learn About Me!</a>
-            </div>
-
-        </section>
-
-        <!-- PROJECT OVERVIEW -->
-        <section class="intro-block">
-
-            <!-- PROJECT OVERVIEW TEXT -->
-            <div class="intro-text">
-                <h3>Projects Introduction</h3>
-                <p>
-                    Here you can find information on some of my projects I've done so far in my academic and professional career.
-                </p>
-                <p>
-                    Be sure to take a look around!
-                </p>
-                <br>
-                <a href="projects.html">Find Out More!</a>
-            </div>
-            
-            <!-- PROJECT OVERVIEW IMAGE -->
-            <figure class="PrOv"></figure>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer-component></footer-component>
+    </div>
 
 </body>
+<script src="d3.js"></script>
+<script src="./charts.js"></script>
+
+
 </html>
