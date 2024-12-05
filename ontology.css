@@ -1,0 +1,342 @@
+/* 
+    SITE RELATED
+*/
+
+svg {
+    width: 100%;
+    max-height: 100%;
+    overflow: visible;
+    display: block;
+}
+
+/* 
+    Collapse & Expand All Buttons
+*/
+.button-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.button-container button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+body {
+    background-color: #2B2B2B;
+}
+
+
+/* 
+    CHART RELATED
+*/
+
+.level-0 {
+    opacity: 0;
+}
+
+/* Square Tree */
+
+.pattern-card {
+    transform-origin: 0px 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.pattern-card-arrow {
+    position: absolute;
+    font-size: 20px;
+    bottom: 2.5%;
+    left: 50%;
+    /* Centers Icon's Coordinates, Rather than Using Left Side */
+    transform: translateX(-50%);
+    color: white;
+}
+
+.fullscreen-btn {
+    position: absolute;
+    font-size: 15px;
+    top: 4%;
+    right: 2.5%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.fa-solid {
+    /* Add transition effect */
+    transition: all 0.5s ease-out;
+}
+
+.fa-solid:hover {
+    cursor: pointer;
+    /* Add transition effect */
+    scale: 1.25;
+}
+
+hr.pattern-card-divider {
+    border-top: 4px solid #FFFFFF;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.pattern-card-name {
+    text-align: left;
+    padding-left: 1em;
+    padding-top: 0.45em;
+    font-size: large;
+    color: white;
+    font-weight: bold;
+    /* border-bottom: 1px solid white; */
+}
+
+.pattern-card-sources {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.pattern-card-sources-regulatory {
+    padding: 0.5em;
+    color: #00AFEF;
+}
+
+.pattern-card-sources-academic {
+    padding: 0.5em;
+    color: #a2000e;
+}
+
+.pattern-card-definition {
+    padding: 0.5em;
+    color: white;
+}
+
+/* 
+    Expanded (Modal) Pattern Pop-Up
+*/
+
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /*display: block; Maybe Flex it?*/
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+}
+
+#modal {
+    display: block;
+    overflow: scroll;
+    border-radius: 25px;
+    background-color: #0F0C08;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 0;
+    width: 80%;
+    height: 80%;
+}
+
+#modal-title {
+    padding: 0.25em 0 0 0.5em;
+    font-size: 60px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+#modal-title-small {
+    padding-left: 0.5em;
+    font-size: 45px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+#modal-body-text {
+    font-size: 50px;
+    padding: 0.5em 1em 0;
+    text-align: left;
+}
+
+hr.modal-divider {
+    border-top: 8px solid #FFFFFF;
+    border-radius: 8px;
+    margin: 0 auto;
+    width: 95%;
+}
+
+#modal-close-button {
+    font-size: 40px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    /* background: none; */
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    padding-right: 1em;
+    padding-top: .25em;
+}
+
+/* 
+    Modal Sources & Source Pills
+*/
+#modal-sources {
+    padding: 1em;
+}
+
+#modal-sources-key {
+    margin: 0.5em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 25px;
+}
+
+#sources-key-regulatory {
+    text-decoration: underline;
+    color: #00AFEF;
+}
+
+#sources-key-academic {
+    text-decoration: underline;
+    color: #a2000e;
+}
+
+#modal-direct,
+#modal-inferred {
+    position: relative;
+    margin: 0 0 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+#direct-tags,
+#inferred-tags {
+    margin: 0 0.5em;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: .5em;
+}
+
+.tag-title {
+    font-size: 30px;
+    font-weight: 900;
+    text-decoration: underline;
+    letter-spacing: .10em;
+    /* border-bottom: 1px dotted white; */
+}
+
+.regulatory-pill {
+    background-color: #00AFEF;
+}
+
+.academic-pill {
+    background-color: #a2000e;
+}
+
+.pill-tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5em;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    color: white;
+    border-radius: 124px;
+}
+
+/* 
+    Modal Case Studies
+*/
+#case-studies-section-title {
+    /* margin: 1em 0 0; */
+    padding-left: 0.5em;
+    font-size: 50px;
+}
+
+#case-study {
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 200px;
+    width: 95%;
+}
+
+#case-study-image {
+    background-color: #dcdcdc;
+    height: 180px;
+    width: 20%;
+}
+
+#case-study-content {
+    position: relative;
+    height: 180px;
+    width: 70%;
+    padding: 0 0.5em;
+}
+
+#case-study-title {
+    font-size: 25px;
+}
+
+hr.case-study-divider {
+    border-top: 3px solid #FFFFFF;
+    border-radius: 8px;
+}
+
+#case-study-origin {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .35em;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: lightgray;
+    color: black;
+    border-radius: 124px;
+}
+
+#case-study-description {
+    padding: 0.5em 0;
+}
+
+#case-study-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
