@@ -259,6 +259,15 @@ function makeSquareTree(data) {
     const width = 1200;
     const height = 800;
 
+    const nodeWidth = 325;
+    const nodeHeight = 200;
+
+    // Horizontal Node Spacing
+    const dx = 450;
+
+    // Vertical Node Spacing
+    const dy = 300;
+
     const svg = d3.create("svg")
         .attr("style", "font: 12px sans-serif; user-select: none; overflow: visible; max-width: 100%; height: auto;")
         .attr("width", width)
@@ -266,12 +275,11 @@ function makeSquareTree(data) {
 
     const gLink = svg.append("g")
         .attr("fill", "none")
-        .attr("stroke", "#555")
-        .attr("stroke-opacity", 0.4)
+        .attr("stroke", "#ffffff")
+        .attr("stroke-opacity", 1)
         .attr("stroke-width", 1.5);
 
     const gNode = svg.append("g")
-        .attr("cursor", "pointer")
         .attr("pointer-events", "all");
 
     const root = d3.hierarchy(
@@ -279,17 +287,25 @@ function makeSquareTree(data) {
         d => d["Child Ontology Record"]
     );
 
-    // Horizontal Node Spacing
-    const dx = 450;
-
-    // Vertical Node Spacing
-    const dy = 250;
-
     const tree = d3.tree().nodeSize([dx, dy]);
 
-    const diagonal = d3.linkVertical()
-        .x(d => d.x)
-        .y(d => d.y);
+    // (X,Y) Values to Offset Start & End Points of Link to Align with Node Dimensions
+    const widthOffset = nodeWidth / 2;
+    const heightOffset = nodeHeight;
+
+    const diagonal = d => {
+        const source = { x: d.source.x + widthOffset, y: d.source.y + heightOffset }; // Bottom-center of the source
+        const target = { x: d.target.x + widthOffset, y: d.target.y }; // Top-center of the target
+
+        // Cubic Bezier Curve
+        return `
+                M${source.x},${source.y}
+                C${source.x},${(source.y + target.y) / 2}
+                 ${target.x},${(source.y + target.y) / 2}
+                 ${target.x},${target.y}
+            `;
+    };
+
 
     // Zoom Functionality
     const zoom = d3.zoom()
@@ -299,9 +315,17 @@ function makeSquareTree(data) {
             gNode.attr("transform", event.transform);
             gLink.attr("transform", event.transform);
         })
-        .tapDistance(0)
 
     svg.call(zoom);
+
+    // Set default view
+    const defaultTransform = d3.zoomIdentity
+        // Set Initial View Point
+        .translate(-80, -50)
+        // Set Default Scaling to 0.5
+        .scale(0.5);
+
+    svg.call(zoom.transform, defaultTransform);
 
     root.x0 = width / 2;
     root.y0 = 0;
@@ -333,51 +357,42 @@ function makeSquareTree(data) {
         const nodeEnter = node.enter().append("g")
             .attr("transform", d => `translate(${source.x0},${source.y0})`)
             .attr("fill-opacity", 0)
-            .attr("stroke-opacity", 0)
-            // .on("click", (event, d) => {
-            //     d.children = d.children ? null : d._children;
-            //     update(event, d);
-            // })
-            ;
+            .attr("stroke-opacity", 0);
 
         const bgColors = ["", "#1B160E", "#282015", "#362C1C"];
 
         // 'foreignObject' makes the Node an HTML Object
         nodeEnter.append("foreignObject")
-            .attr("x", -70)
-            .attr("y", -10)
-            .attr("width", 325)
-            .attr("height", 200)
+            .attr("x", 0)
+            .attr("y", 0)
+            .attr("width", nodeWidth)
+            .attr("height", nodeHeight)
             .append("xhtml:div")
             .style("background-color", d => bgColors[d.depth])
             .attr("class", "pattern-card")
             .html(d =>
                 `
-                <div class="pattern-card-name">
-                    ${d.data["Pattern Name"]}
-                </div>
-                <button class="fullscreen-btn" >
-                    <svg viewBox="0 0 448 512" height="1em">
-                    <path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z">
-                    </path>
-                    </svg>
-                </button>
-                <hr class="pattern-card-divider"></hr>
-                <div class="pattern-card-sources" style="text-align: center">
-                    <div class="pattern-card-sources-${d.data["Direct Connection Sources"] ? sourceTypes[d.data["Direct Connection Sources"][0]] : ""}">
-                        ${d.data["Direct Connection Sources"] ? d.data["Direct Connection Sources"][0] : ""}
+                <i class="fullscreen-btn fa-solid fa-expand"></i>
+                
+                <div class="pattern-card-content">
+                    <div class="pattern-card-name">
+                        ${d.data["Pattern Name"]}
                     </div>
-                    <div class="pattern-card-sources-${d.data["Inferred Connection Sources"] ? sourceTypes[d.data["Inferred Connection Sources"][0]] : ""}">
-                        ${d.data["Inferred Connection Sources"] ? d.data["Inferred Connection Sources"][0] : ""}
+                    <hr class="pattern-card-divider"></hr>
+                    <div class="pattern-card-sources" style="text-align: center">
+                        <div class="pattern-card-sources-${d.data["Direct Connection Sources"] ? sourceTypes[d.data["Direct Connection Sources"][0]] : ""}">
+                            ${d.data["Direct Connection Sources"] ? d.data["Direct Connection Sources"][0] : ""}
+                        </div>
+                        <div class="pattern-card-sources-${d.data["Inferred Connection Sources"] ? sourceTypes[d.data["Inferred Connection Sources"][0]] : ""}">
+                            ${d.data["Inferred Connection Sources"] ? d.data["Inferred Connection Sources"][0] : ""}
+                        </div>
+                    </div>
+                    <div class="pattern-card-definition">
+                        ${d.data["Unified Definition"] ? d.data["Unified Definition"].replaceAll("**", "") : ""}
                     </div>
                 </div>
-                <div class="pattern-card-definition">
-                    ${d.data["Unified Definition"] ? d.data["Unified Definition"].replaceAll("**", "") : ""}
-                </div>
-                <div class="pattern-card-arrow toggle-children">
-                    <div class="arrow-top"></div>
-                    <div class="arrow-bottom"></div>
-                </div>
+                
+                <i class="pattern-card-arrow toggle-children fa-solid fa-arrow-down"></i>
                 `
             );
 
@@ -392,11 +407,6 @@ function makeSquareTree(data) {
             .on("click", (event, d) => {
                 d.children = d.children ? null : d._children;
                 update(event, d);
-            });
-
-        nodeEnter.select(".expand-node")
-            .on('click', (event, d) => {
-                openPopup(d.data)
             });
 
         nodeEnter.select(".fullscreen-btn")
@@ -427,6 +437,7 @@ function makeSquareTree(data) {
         link.merge(linkEnter).transition(transition)
             .attr("d", diagonal);
 
+        // Where Links Retract To
         link.exit().transition(transition).remove()
             .attr("d", d => {
                 const o = { x: source.x, y: source.y };
@@ -450,6 +461,9 @@ function makeSquareTree(data) {
 
                 // Empty stored child nodes
                 d._children = null;
+
+                // Expand All Children's Children
+                expandAll(d);
             }
         });
         update(null, root);  // Re-render Chart
@@ -469,7 +483,7 @@ function makeSquareTree(data) {
         });
 
         // Reset zoom to the default view
-        svg.transition().duration(250).call(zoom.transform, d3.zoomIdentity);
+        svg.call(zoom.transform, defaultTransform);
 
         // Re-render the chart
         update(null, root);
