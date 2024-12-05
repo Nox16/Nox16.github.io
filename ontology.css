@@ -50,11 +50,11 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    position: relative;
+    /* position: relative; */
 }
 
 .pattern-card-arrow {
-    position: absolute;
+    position: fixed;
     font-size: 20px;
     bottom: 2.5%;
     left: 50%;
@@ -64,7 +64,7 @@ body {
 }
 
 .fullscreen-btn {
-    position: absolute;
+    position: fixed;
     font-size: 15px;
     top: 4%;
     right: 2.5%;
